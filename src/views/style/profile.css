@@ -1,0 +1,39 @@
+.profile{
+  width: 50%;
+    margin: auto;
+}
+
+.card-info{
+  padding: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #1a4464;
+    margin: 1rem;
+    border-radius: 1rem;
+    position: relative;
+}
+
+.img-profile img{
+  border-radius: 50%;
+    width: 10rem;
+}
+
+.info-profile{
+  color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.edit-me-icon{
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.edit-me-icon:hover{
+  opacity: 0.5;
+}
