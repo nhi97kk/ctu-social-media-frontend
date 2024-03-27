@@ -6,6 +6,9 @@ class UserService {
   async getUser() {
     return (await this.api.get("/me")).data.data;
   }
+  async getOtherUser(id) {
+    return (await this.api.get(`/${id}`)).data.data;
+  }
 
   async deleteAll() {
     return (await this.api.delete("/")).data;

@@ -16,9 +16,10 @@ const routes = [
     component: Auth,
   },
   {
-    path: "/profile",
+    path: "/profile/:id",
     name: "profile",
     component: Profile,
+    props: true, // Truyền các biến trong $route.params vào làm props
   },
   {
     path: "/friend",

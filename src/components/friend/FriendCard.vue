@@ -1,9 +1,16 @@
 <template>
   <div class="item">
-    <div class="person-img">
-      <div class="icon">&times;</div>
-      <img :src="getImageUrl(friend.photo)" alt="" />
-    </div>
+    <router-link
+      :to="{
+        name: 'profile',
+        params: { id: friend._id },
+      }"
+    >
+      <div class="person-img">
+        <div class="icon">&times;</div>
+        <img :src="getImageUrl(friend.photo)" alt="" />
+      </div>
+    </router-link>
 
     <div class="info">
       <h4>{{ friend.name }}</h4>

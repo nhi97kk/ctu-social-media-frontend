@@ -340,6 +340,7 @@ nav .right-side .user-icons .icon.has-notification::after {
     justify-content: center;
     align-items: center;
     margin-right: 5px;
+    color: white;
 }
 
 .wrapper .shortcuts .first-col .menu-item:last-of-type .item-row {
@@ -570,6 +571,7 @@ nav .right-side .user-icons .icon.has-notification::after {
 .posts .create-post .upper .title .icon {
     height: 25px;
     width: 25px;
+    color: white;
 }
 
 .posts .create-post .media .category .option:nth-child(2) .icon {
@@ -941,3 +943,9 @@ nav .right-side .user-icons .icon.has-notification::after {
     cursor: pointer;
 }
 
+.desc-comment{
+    margin: 0 1rem;
+    padding: 0.5rem;
+    border-radius: 15px;
+    background-color: burlywood;
+}

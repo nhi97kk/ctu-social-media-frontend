@@ -13,7 +13,7 @@
           </div>
           <input
             data-toggle="modal"
-            data-target="#myModal"
+            data-target="#myModaltoPost"
             type="text"
             :placeholder="`What's on your mind, ${user?.name}?`"
             name=""
@@ -24,21 +24,21 @@
           <div class="category">
             <div class="option" data-toggle="modal" data-target="#myModal">
               <div class="icon">
-                <img src="../assets/img/icons/video-live.svg" alt="" />
+                <i class="fa-solid fa-video"></i>
               </div>
               <span>Live video</span>
             </div>
 
             <div class="option" data-toggle="modal" data-target="#myModal">
               <div class="icon">
-                <img src="../assets/img/icons/photos.svg" alt="" />
+                <i class="fa-solid fa-image"></i>
               </div>
               <span>photo/video</span>
             </div>
 
             <div class="option" data-toggle="modal" data-target="#myModal">
               <div class="icon">
-                <img src="../assets/img/icons/smile.svg" alt="" />
+                <i class="fa-solid fa-icons"></i>
               </div>
               <span>feeling/activity</span>
             </div>
@@ -76,7 +76,7 @@
   </div>
 
   <!-- The Modal -->
-  <div class="modal" id="myModal">
+  <div class="modal" id="myModaltoPost">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <!-- Modal Header -->
@@ -146,7 +146,7 @@
 </template>
 <script>
 import FriendCard from "@/components/friend/FriendCard.vue";
-import PostCard from "./PostCard.vue";
+import PostCard from "@/components/PostCard.vue";
 import postService from "@/services/post.service";
 import fileService from "@/services/file.service";
 export default {
@@ -212,5 +212,3 @@ export default {
   },
 };
 </script>
-
-<style scoped></style>

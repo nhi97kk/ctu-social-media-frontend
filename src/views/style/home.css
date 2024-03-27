@@ -1,0 +1,31 @@
+.cmt-side{
+  display: flex;
+    width: 100%;
+    height: 40px;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.input-side{
+  display: flex;
+    flex: 1;
+    padding: 0.5rem;
+}
+
+.input-cmt{
+  flex: 1;
+    border: none;
+}
+
+.media:hover{
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.modal-content{
+  max-height: 90vh;
+  overflow: overlay;
+}
+
+
+

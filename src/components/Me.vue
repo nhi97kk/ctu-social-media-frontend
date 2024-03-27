@@ -11,6 +11,7 @@
       </div>
 
       <i
+        v-if="current._id == user._id"
         class="fa-solid fa-user-pen edit-me-icon"
         data-toggle="modal"
         data-target="#myModal"
@@ -164,6 +165,9 @@ export default {
   },
   props: {
     user: {
+      type: Object,
+    },
+    current: {
       type: Object,
     },
   },

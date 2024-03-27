@@ -7,10 +7,14 @@ import { useAuthStore } from "@/store/auth";
 import { usePostStore } from "@/store/post";
 import { onMounted } from "vue";
 import { useRouter } from "vue-router";
+import { defineProps } from "vue";
 
 const router = useRouter();
 const authStore = useAuthStore();
 const postStore = usePostStore();
+const props = defineProps({
+  id: String, // hoặc kiểu dữ liệu tương ứng
+});
 
 onMounted(async () => {
   await authStore.getUser();
@@ -19,15 +23,19 @@ onMounted(async () => {
     router.push({ name: "auth" });
   }
   if (authStore.user) {
-    await postStore.getAllPosts();
+    await authStore.getOtherUser(props.id);
+    await postStore.getAllUserPosts(props.id);
+
+    console.log(authStore.other);
+    console.log(postStore.posts);
   }
 });
 </script>
 
 <template>
-  <div v-if="authStore.user">
+  <div v-if="authStore.user && authStore.other && postStore.posts">
     <AppHeader :user="authStore.user" />
-    <Me :user="authStore.user" />
+    <Me :user="authStore.other" :current="authStore.user" />
     <div class="posts">
       <div class="timeline">
         <PostCard
@@ -38,6 +46,7 @@ onMounted(async () => {
       </div>
     </div>
   </div>
+
   <div v-else>
     <Auth />
   </div>

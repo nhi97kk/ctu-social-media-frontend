@@ -13,7 +13,7 @@
       <div class="menu-item" @click="$router.push('/friend')">
         <div class="item-row">
           <div class="icon">
-            <img src="../assets/img/icons/colored-people.svg" alt="" />
+            <i class="fa-solid fa-user-group"></i>
           </div>
           <h4>Friends</h4>
         </div>
@@ -22,7 +22,7 @@
       <div class="menu-item" @click="$router.push('/chat')">
         <div class="item-row">
           <div class="icon">
-            <img src="../assets/img/icons/colored-messenger.svg" alt="" />
+            <i class="fa-solid fa-message"></i>
           </div>
           <h4>Messenger</h4>
         </div>
@@ -31,7 +31,7 @@
       <div class="menu-item">
         <div class="item-row">
           <div class="icon">
-            <img src="../assets/img/icons/colored-flag.svg" alt="" />
+            <i class="fa-solid fa-flag"></i>
           </div>
           <h4>Pages</h4>
         </div>
@@ -42,7 +42,7 @@
       <div class="menu-item">
         <div class="item-row">
           <div class="icon">
-            <img src="../assets/img/stories/st-1.jpeg" alt="" />
+            <img src="../../assets/img/stories/st-1.jpeg" alt="" />
           </div>
           <h4>Designers house</h4>
         </div>
@@ -51,7 +51,7 @@
       <div class="menu-item">
         <div class="item-row">
           <div class="icon">
-            <img src="../assets/img/stories/st-2.jpeg" alt="" />
+            <img src="../../assets/img/stories/st-2.jpeg" alt="" />
           </div>
           <h4>Script house</h4>
         </div>

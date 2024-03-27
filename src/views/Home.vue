@@ -1,6 +1,5 @@
 <script setup>
 import AppHeader from "@/components/AppHeader.vue";
-import Content from "@/components/Content.vue";
 import Auth from "@/views/Auth.vue";
 import { useAuthStore } from "@/store/auth";
 import { usePostStore } from "@/store/post";
@@ -27,7 +26,11 @@ onMounted(async () => {
 <template>
   <div v-if="authStore.user">
     <AppHeader :user="authStore.user" />
-    <Content :user="authStore.user" :posts="postStore.posts" />
+    <div class="wrapper">
+      <LeftSide :user="authStore.user" />
+      <PostSide :user="authStore.user" :posts="postStore.posts" />
+      <RightSide :user="authStore.user" />
+    </div>
   </div>
   <div v-else>
     <Auth />
@@ -35,10 +38,18 @@ onMounted(async () => {
 </template>
 
 <script>
+import LeftSide from "@/components/home/LeftSide.vue";
+import PostSide from "@/components/home/PostSide.vue";
+import RightSide from "@/components/home/RightSide.vue";
 export default {
   components: {
     AppHeader,
-    Content,
+    LeftSide,
+    PostSide,
+    RightSide,
   },
 };
 </script>
+<style>
+@import "./style/home.css";
+</style>

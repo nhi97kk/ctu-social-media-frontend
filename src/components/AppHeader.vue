@@ -41,12 +41,19 @@
 
     <!--right side-->
     <div class="right-side">
-      <div class="user" @click="toProfile()">
-        <div class="profile">
-          <img :src="getImageUrl(user.photo)" alt="" />
+      <router-link
+        :to="{
+          name: 'profile',
+          params: { id: user._id },
+        }"
+      >
+        <div class="user">
+          <div class="profile">
+            <img :src="getImageUrl(user.photo)" alt="" />
+          </div>
         </div>
         <!-- <h4>{{ user.name }}</h4> -->
-      </div>
+      </router-link>
 
       <!--icons-->
       <div class="user-icons">
@@ -88,9 +95,9 @@ export default {
     toHome() {
       this.$router.push("/");
     },
-    toProfile() {
-      this.$router.push("/profile");
-    },
+    // toProfile() {
+    //   this.$router.push(`/profile/${this.user._id}`);
+    // },
   },
 };
 </script>
