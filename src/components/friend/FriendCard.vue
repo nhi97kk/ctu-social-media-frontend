@@ -17,12 +17,17 @@
       <span>CTU Social Media</span>
       <button v-if="option === 'friends'">Message</button>
       <button v-if="option === 'requests'" @click="confirm">Confirm</button>
-      <button v-if="option === 'others'" @click="addFriend">Add friend</button>
+      <button v-if="option === 'others'" @click="handleButtonClick">
+        {{ buttonText }}
+      </button>
     </div>
   </div>
 </template>
+
 <script>
 import UserService from "@/services/user.service";
+import chatService from "@/services/chat.service";
+
 export default {
   props: {
     friend: {
@@ -31,6 +36,9 @@ export default {
     option: {
       type: String,
     },
+    user: {
+      type: Object,
+    },
   },
   methods: {
     getImageUrl(photo) {
@@ -38,10 +46,32 @@ export default {
     },
     async addFriend() {
       await UserService.addFriend(this.friend._id);
+      // Cập nhật trạng thái nút sau khi gửi yêu cầu kết bạn
+      this.friend.requests.push(this.user._id);
     },
     async confirm() {
       await UserService.acceptRequest(this.friend._id);
+      const members = [this.friend._id, this.user._id];
+      await chatService.create({ members });
       this.$emit("show-requests");
+    },
+    async handleButtonClick() {
+      if (this.friend.requests.includes(this.user._id)) {
+        // Nếu user._id có trong mảng friend.requests
+        // Hiển thị Sent requests
+        console.log("Sent requests");
+      } else {
+        // Nếu user._id không có trong mảng friend.requests
+        // Hiển thị Add friend
+        await this.addFriend();
+      }
+    },
+  },
+  computed: {
+    buttonText() {
+      return this.friend.requests.includes(this.user._id)
+        ? "Sent requests"
+        : "Add friend";
     },
   },
 };

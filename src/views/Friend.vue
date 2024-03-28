@@ -49,6 +49,7 @@ const showOthers = () => {
           <!-- Duyệt qua danh sách bạn bè và hiển thị các card friend -->
           <FriendCard
             v-for="friend in friendStore.friends"
+            :user="authStore.user"
             :key="friend._id"
             :friend="friend"
             :option="friendStore.option"

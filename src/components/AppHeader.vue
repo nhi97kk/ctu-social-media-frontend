@@ -57,7 +57,7 @@
 
       <!--icons-->
       <div class="user-icons">
-        <div class="icon has-notification">
+        <div class="icon has-notification" @click="$router.push('/chat')">
           <img src=" ../assets/img/icons/messenger.svg" alt="" />
         </div>
 
