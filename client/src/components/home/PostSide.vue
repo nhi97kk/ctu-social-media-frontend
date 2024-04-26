@@ -89,16 +89,16 @@
 
         <!-- Modal body -->
         <div class="view view-post-container smaller-margin">
-          <div class="view-post">
+          <div class="view-post p-4">
             <div class="upper">
-              <div class="d-flex">
+              <div class="d-flex align-items-baseline">
                 <div class="user">
                   <div class="profile">
                     <img alt="" :src="getImageUrl(user.photo)" />
                   </div>
                 </div>
 
-                <div class="info">
+                <div class="info ml-4">
                   <h6 class="name">{{ user?.name }}</h6>
                 </div>
               </div>
@@ -108,8 +108,9 @@
               </div>
             </div>
 
-            <div class="desc">
+            <div class="desc m-4">
               <input
+                class="border-0"
                 type="text"
                 v-model="data.desc"
                 :placeholder="`What's on your mind, ${user?.name}?`"
@@ -117,7 +118,11 @@
             </div>
 
             <div class="post-img">
-              <img :src="userPhotoUrl ? userPhotoUrl : ''" alt="" />
+              <img
+                style="width: 500px"
+                :src="userPhotoUrl ? userPhotoUrl : ''"
+                alt=""
+              />
               <label for="uploadImageInput">Upload Image</label>
               <input
                 ref="file"

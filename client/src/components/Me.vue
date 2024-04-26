@@ -21,7 +21,7 @@
 
   <!-- The Modal -->
   <div class="modal" id="myModal">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog">
       <div class="modal-content">
         <!-- Modal Header -->
         <div class="modal-header">
@@ -32,12 +32,12 @@
         </div>
 
         <!-- Modal body -->
-        <div class="user-view__form-container">
+        <div class="user-view__form-container p-4">
           <h2 class="heading-secondary ma-bt-md">Your account settings</h2>
 
           <form class="form form-user-data">
             <div class="form__group">
-              <label class="form__label" for="name">Name</label>
+              <label class="form__label" for="name">Name: </label>
               <input
                 id="name"
                 class="form__input"
@@ -48,7 +48,7 @@
               />
             </div>
             <div class="form__group ma-bt-md">
-              <label class="form__label" for="email">Email address</label>
+              <label class="form__label" for="email">Email address: </label>
               <input
                 id="email"
                 class="form__input"
@@ -60,7 +60,8 @@
             </div>
             <div class="form__group form__photo-upload">
               <img
-                class="form__user-photo"
+                class="form__user-photo m-4"
+                style="width: 100px"
                 :src="
                   userPhotoUrl ? userPhotoUrl : getImageUrl(userLocal.photo)
                 "
@@ -94,7 +95,7 @@
           <form class="form form-user-password">
             <div class="form__group">
               <label class="form__label" for="password-current"
-                >Current password</label
+                >Current password:</label
               >
               <input
                 id="password-current"
@@ -107,7 +108,7 @@
               />
             </div>
             <div class="form__group">
-              <label class="form__label" for="password">New password</label>
+              <label class="form__label" for="password">New password:</label>
               <input
                 id="password"
                 class="form__input"
@@ -120,7 +121,7 @@
             </div>
             <div class="form__group ma-bt-lg">
               <label class="form__label" for="password-confirm"
-                >Confirm password</label
+                >Confirm password:</label
               >
               <input
                 id="password-confirm"

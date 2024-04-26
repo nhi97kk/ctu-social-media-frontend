@@ -93,6 +93,7 @@ export default {
       }
     },
     toHome() {
+      // window.location.reload();
       this.$router.push("/");
     },
     // toProfile() {
